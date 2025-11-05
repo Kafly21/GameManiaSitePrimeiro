@@ -7,14 +7,14 @@
 
 /* Header principal */
 .site-header {
-    background-color: #050a30;
+    background-color: #0f088d;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Site-wide background and text color */
 html, body {
     height: 100%;
-    background: #3e20dc;   /* <- site background color */
+    background: #050a30;   /* <- site background color */
     color: #ffffff;        /* default text color for contrast */
 }
 
@@ -181,7 +181,7 @@ html, body {
 /* Footer styles */
 .site-footer {
     /* Solid color changed to #050a30 */
-    background: #050a30;
+    background: #0f088d;
     color: #ffffff;
     padding: 20px 0;
 }
