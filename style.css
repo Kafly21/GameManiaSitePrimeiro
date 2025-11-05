@@ -11,6 +11,22 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Site-wide background and text color */
+html, body {
+    height: 100%;
+    background: #3e20dc;   /* <- site background color */
+    color: #ffffff;        /* default text color for contrast */
+}
+
+/* Ensure sections that use Bootstrap bg utilities don't hide the body background.
+   Be specific where possible; broad rules below if you used Bootstrap classes like
+   bg-body-tertiary on containers (e.g., .album). */
+.album.bg-body-tertiary,
+.bg-body-tertiary {
+    background-color: transparent !important;
+}
+
+
 /* Logo */
 .logo {
     width: 150px;
@@ -162,26 +178,34 @@
 }
 
 /* Estilo do Footer */
+/* Footer styles */
 .site-footer {
-    background: linear-gradient(90deg, #072033 0%, #0b3550 100%);
+    /* Solid color changed to #050a30 */
+    background: #050a30;
     color: #ffffff;
+    padding: 20px 0;
 }
 
-.footer-section h2 {
+.site-footer a {
+    color: #ffffff;
+}
+.site-footer a:hover {
     color: #ffd700;
-    font-size: 18px;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.footer-section a {
+.site-footer .text-body-secondary {
+    color: #ffffff !important;
+}
+
+/* Make links and nav links in the footer white (and keep hover gold) */
+.site-footer a,
+.site-footer .nav-link,
+.site-footer p,
+.site-footer small {
     color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
 }
-
-.footer-section a:hover {
+.site-footer a:hover,
+.site-footer .nav-link:hover {
     color: #ffd700;
 }
 
