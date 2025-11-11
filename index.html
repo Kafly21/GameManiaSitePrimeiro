@@ -9,187 +9,114 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+ 
 
-<body>
-  <header class="site-header">
-    <nav>
-      <div class="b-example-divider"></div>
-      <div class="container">
-        <header
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-              <a
-                href="/"
-                class="d-inline-flex link-body-emphasis text-decoration-none">
-                  <svg
-                    class="bi"
-                    width="40"
-                    height="32"
-                    role="img"
-                    aria-label="Bootstrap">
-                    <use xlink:href="#bootstrap"></use>
-                  </svg>
-              </a>
-            </div>
-            <ul
-              class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-              <p>GAME MANIA</p>
-            </ul>
-            <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">
-            Login
-            </button>
-            <button type="button" class="btn btn-primary">
-            Sign-up
-            </button>
-    </nav>
-  </header>
-  
-    <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-              <svg
-                class="bi pe-none me-2"
-                width="16"
-                height="16"
-                aria-hidden="true"
-              >
-                <use xlink:href="#home"></use>
-              </svg>
-              Página Inicial
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg
-                class="bi pe-none me-2"
-                width="16"
-                height="16"
-                aria-hidden="true"
-              >
-                <use xlink:href="#speedometer2"></use>
-              </svg>
-              Carrinho
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg
-                class="bi pe-none me-2"
-                width="16"
-                height="16"
-                aria-hidden="true"
-              >
-                <use xlink:href="#table"></use>
-              </svg>
-              Sobre nós
-            </a>
-          </li>
-    <main>
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption text-start">
-                <P>
-                    ADICIONAR A IMAGEM DO BANNER    <!--ADICIONAR IMAGEM DO BANNER-->
-                </P>
-            </div>
-          <div class="carousel-item">
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption">
-                <p>
-                ADICIONAR A IMAGEM DO BANNER      <!--ADICIONAR IMAGEM DO BANNER-->
-                </p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>
-                ADICIONAR A IMAGEM DO BANNER      <!--ADICIONAR IMAGEM DO BANNER-->
-                </p>
-                <p>
-                  <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </main>
-    <main>
-        <div class="album py-5 bg-body-tertiary">
+<body> <!--Corpo do documento-->
+       <header class="site-header"> <!--Cabeçalho do site, sendo de classe site-header pra facilitar no css-->
+
         <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-        <div class="card shadow-sm">
-        <svg
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg
+                class="bi me-2"
+                width="40"
+                height="32"
+                role="img"
+                aria-label="Bootstrap"
+              >
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+              <img src="assets/imagens/logo.png" alt="Logo Game Mania" width="120"> <!-- Nossa grandíosissima logo da empresa -->
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> <!-- Barra de navegação em vez de menu lateral (?) -->
+              <li><a href="#" class="nav-link px-2 text-secondary">Página Inicial</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Favoritos</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Carrinho</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Sobre Nós</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <!-- Barra de pesquisa -->
+              <input
+                type="search"
+                class="search-bar"
+                placeholder="Nome do Produto..."
+                aria-label="Search"
+              />
+            </form>
+
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">
+                Login
+              </button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<main>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel"> <!-- Carrossel de imagens que eu consegui quebrar de alguma forma, boa sorte pra consertar -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+         data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+</main>
+
+<main>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+       <div class="carousel-item active">
+         <img src="assets/imagens/banner1.jpg" class="d-block w-100" alt="Banner 1" height="500">
+       </div>
+        <div class="carousel-item">
+         <img src="assets/imagens/banner2.jpg" class="d-block w-100" alt="Banner 2" height="500">
+       </div>
+       <div class="carousel-item">
+         <img src="assets/imagens/banner3.jpg" class="d-block w-100" alt="Banner 3" height="500">
+       </div>
+     </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</main>
+
+<main> <!-- Seção principal do site sobre produtos. Coloquei imagens mas não consegui tirar o retÂngulo do topo. -->
+    <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col">
+    <div class="card shadow-sm">
+    <svg
       aria-label="Placeholder: Thumbnail"
       class="bd-placeholder-img card-img-top"
       height="225"
@@ -204,6 +131,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/controle.jpg" class="card-img-top" alt="Controle Gamer">
           <div class="card-body">
             <p class="card-text">
               Controle Gamer
@@ -216,10 +144,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$400,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -241,6 +175,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/gabinete.jpg" class="card-img-top" alt="Gabinete Gamer">
           <div class="card-body">
             <p class="card-text">
               Gabinete Gamer
@@ -253,10 +188,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$300,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -278,6 +219,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/monitor.jpg" class="card-img-top" alt="Monitor Gamer">
           <div class="card-body">
             <p class="card-text">
               Monitor Gamer
@@ -290,10 +232,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$800,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -315,6 +263,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/mouse.jpg" class="card-img-top" alt="Mouse Gamer">
           <div class="card-body">
             <p class="card-text">
               Mouse Gamer
@@ -327,10 +276,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$500,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -352,6 +307,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/teclado.jpg" class="card-img-top" alt="Teclado Gamer">
           <div class="card-body">
             <p class="card-text">
               Teclado Gamer
@@ -364,10 +320,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$450,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -389,6 +351,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/fone.jpg" class="card-img-top" alt="Fone Gamer">
           <div class="card-body">
             <p class="card-text">
               Fone Gamer
@@ -401,10 +364,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$700,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -426,6 +395,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/mousepad.jpg" class="card-img-top" alt="Mousepad Gamer">
           <div class="card-body">
             <p class="card-text">
               Mousepad Gamer
@@ -438,10 +408,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
-              </button>
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
+                </button>
               </div>
-              <small class="text-body-secondary">R$100,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -463,6 +439,7 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/cadeira.jpg" class="card-img-top" alt="Cadeira Gamer">
           <div class="card-body">
             <p class="card-text">
               Cadeira Gamer
@@ -475,10 +452,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$900,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -500,9 +483,10 @@
               Thumbnail
             </text>
           </svg>
+          <img src="assets/imagens/almofada.jpg" class="card-img-top" alt="Almofada Gamer">
           <div class="card-body">
             <p class="card-text">
-              Almofada Gamer 
+              Almofada Gamer
             </p>
             <div
               class="d-flex justify-content-between align-items-center"
@@ -512,10 +496,16 @@
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
-                  Comprar
+                  View
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Edit
                 </button>
               </div>
-              <small class="text-body-secondary">R$100,00</small>
+              <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
         </div>
@@ -524,24 +514,12 @@
   </div>
 </div>
 </main>
+
 </body>
+
 <footer class="site-footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <p class="col-md-4 mb-0 text-body-secondary">
-    &copy; Game Mania
+    &copy; GameMania 2025
   </p>
-  <a
-    href="/"
-    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
-    aria-label="Bootstrap"
-  >
-    <svg class="bi me-2" width="40" height="32" aria-hidden="true">
-      <use xlink:href="#bootstrap"></use>
-    </svg>
-  </a>
-  <ul class="nav col-md-4 justify-content-end">
-    <li class="nav-item">
-      <p>gamemania@email.com</p>
-    </li>
-  </ul>
+ 
 </footer>
-
