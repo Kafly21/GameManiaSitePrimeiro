@@ -2,62 +2,57 @@
 <html lang="pt-br"> <!--Usado para identificar o idioma do conteúdo textual na web-->
 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Mania</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+<head> <!--Cabeçalho do documento-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Mania</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
  
 
 <body> <!--Corpo do documento-->
-       <header class="site-header"> <!--Cabeçalho do site, sendo de classe site-header pra facilitar no css-->
 
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-              <svg
-                class="bi me-2"
-                width="40"
-                height="32"
-                role="img"
-                aria-label="Bootstrap"
-              >
-                <use xlink:href="#bootstrap"></use>
-              </svg>
-              <img src="assets/imagens/logo.png" alt="Logo Game Mania" width="120"> <!-- Nossa grandíosissima logo da empresa -->
-            </a>
+  <header class="site-header"> <!--Cabeçalho do site, sendo de classe site-header pra facilitar no css-->
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> <!-- Barra de navegação em vez de menu lateral (?) -->
-              <li><a href="#" class="nav-link px-2 text-secondary">Página Inicial</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Favoritos</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Carrinho</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Sobre Nós</a></li>
-            </ul>
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg
+            class="bi me-2"
+            width="40"
+            height="32"
+            role="img"
+            aria-label="Bootstrap"
+          >
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <img src="assets/imagens/logo.png" alt="Logo Game Mania" width="120"> <!-- Nossa grandíosissima logo da empresa -->
+          </a>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <!-- Barra de pesquisa -->
-              <input
-                type="search"
-                class="search-bar"
-                placeholder="Nome do Produto..."
-                aria-label="Search"
-              />
-            </form>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 text-secondary">Página Inicial</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Favoritos</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Carrinho</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Sobre Nós</a></li>
+          </ul>
 
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">
-                Login
-              </button>
-              <button type="button" class="btn btn-warning">Sign-up</button>
-            </div>
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="#" method="get" aria-label="Buscar produtos">
+            <input type="search" name="q" class="search-bar" placeholder="Nome do Produto..." aria-label="Search" />
+            <button type="submit" class="btn btn-outline-light btn-sm ms-2">Buscar</button>
+          </form>
+
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2">Login</button>
+            <button type="button" class="btn btn-warning">Cadastrar</button>
           </div>
         </div>
-      </header>
+      </div>
+  </header>
 
-<main>
+  <main>
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel"> <!-- Carrossel de imagens que eu consegui quebrar de alguma forma, boa sorte pra consertar -->
-      <div class="carousel-indicators">
+      <div class="carousel-indicators"> <!-- Mostra onde você está no carrossel e mostra as setinhas -->
         <button
           type="button"
           data-bs-target="#myCarousel"
@@ -79,38 +74,33 @@
           aria-label="Slide 3"
         ></button>
       </div>
-</main>
 
-<main>
-    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-       <div class="carousel-item active">
-         <img src="assets/imagens/banner1.jpg" class="d-block w-100" alt="Banner 1" height="500">
-       </div>
-        <div class="carousel-item">
-         <img src="assets/imagens/banner2.jpg" class="d-block w-100" alt="Banner 2" height="500">
-       </div>
-       <div class="carousel-item">
-         <img src="assets/imagens/banner3.jpg" class="d-block w-100" alt="Banner 3" height="500">
-       </div>
-     </div>
-     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-       <span class="visually-hidden">Next</span>
-      </button>
+      <div class="carousel-inner"> <!-- Imagens do carrossel que teoricamente eram pra ficar alterando. -->
+    <div class="carousel-item active">
+      <img src="assets/imagens/banner1.jpg" class="d-block w-100" alt="Promoção banner 1" height="500">
     </div>
-</main>
+    <div class="carousel-item">
+      <img src="assets/imagens/banner2.jpg" class="d-block w-100" alt="Promoção banner 2" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/imagens/banner3.jpg" class="d-block w-100" alt="Promoção banner 3" height="500">
+    </div>
+    
+  </div>
 
-<main> <!-- Seção principal do site sobre produtos. Coloquei imagens mas não consegui tirar o retÂngulo do topo. -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+  </main>
+
+
+  <main> <!-- Seção principal do site sobre produtos. Coloquei imagens mas não consegui tirar o retÂngulo do topo e não sei deixar uniforme o tamanho delas. -->
     <div class="album py-5 bg-body-tertiary">
     <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -515,11 +505,10 @@
 </div>
 </main>
 
-</body>
-
 <footer class="site-footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <p class="col-md-4 mb-0 text-body-secondary">
     &copy; GameMania 2025
   </p>
  
 </footer>
+</body>
