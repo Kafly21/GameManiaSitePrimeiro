@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Game Mania</title>
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    	<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+ 
+
+	<body>
+
+		<header class="site-header sticky-top">
+
+			<div class="container">
+				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+					<a href="index.html" class="logo-text">
+						<img src="assets/imagens/logo.png" alt="Logotipo Game Mania" class="logo">
+					</a>
+
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+						<li><a href="index.html" class="nav-link px-2 text-white">Página Inicial</a></li>
+						<li><a href="favoritos.html" class="nav-link px-2 text-white">Favoritos</a></li>
+						<li><a href="carrinho.html" class="nav-link px-2 text-secondary">Carrinho</a></li>
+						<li><a href="sobre.html" class="nav-link px-2 text-white">Sobre Nós</a></li>
+					</ul>
+
+					<form class="search-bar flex-grow-1 mx-md-4 my-2 my-md-0 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="#" aria-label="Buscar produtos">
+						<input type="text" placeholder="Pesquisar nome do produto..." class="search-input form-control">
+						<button type="submit" class="search-button btn p-0">
+						<img src="assets/imagens/lupa.png" width="30" button type="submit" class="btn-sm ms-2">
+						</button>
+					</form>
+
+					<div class="text-end">
+						<button type="button" class="btn btn-warning"><a href="login.html" class="nav-link px-2 text-secondary">Login</a></button> <!--Botão de login-->
+					</div>
+
+				</div>
+			</div>
+
+		</header>
+
+		<main class="container py-5">
+			<h2 class="text-center mb-4">Carrinho</h2>
+			<div id="cart-empty" class="text-center text-muted carrinho-vazio" style="display:none;">
+				<p class="vazio">
+					Ops, não tem nada por aqui...
+				</p>
+					<p><button class="btn btn-secondary" onclick="window.location.href='index.html'">Continue comprando! >:3</button></p>
+			</div>
+			<div id="cart-list" class="table-responsive">
+				<table class="table table-dark table-striped align-middle">
+					<thead>
+						<tr>
+							<th>Produto</th>
+							<th>Imagem</th>
+							<th>Preço Unitário</th>
+							<th>Quantidade</th>
+							<th>Subtotal</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody id="cart-items">
+							<!-- Produtos do carrinho serão inseridos aqui via JS -->
+						</tbody>
+					</table>
+			</div>
+			<div class="d-flex justify-content-between align-items-center mt-4">
+				<button class="btn btn-secondary" onclick="window.location.href='index.html'">Adicionar produtos</button>
+				<h4 id="cart-total" class="mb-0">Total: R$ 0,00</h4>
+			</div>
+		</main>
+
+		<footer class="site-footer mt-5 py-4 d-flex flex-wrap align-items-center justify-content-center">
+			<p class="col-md-4 mb-0 align-items-center text-body-secondary">
+				&copy; GameMania 2025 - Criadores do site Kauan Dias & Pedro Nunes
+			</p>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/Js/main.js"></script>
+
+		<script>
+			// Funções do carrinho
+			function getCart() {
+				return JSON.parse(localStorage.getItem('cart')) || [];
+			}
+			function saveCart(cart) {
+				localStorage.setItem('cart', JSON.stringify(cart));
+			}
+			function renderCart() {
+				const cart = getCart();
+				const tbody = document.getElementById('cart-items');
+				const totalEl = document.getElementById('cart-total');
+				const emptyEl = document.getElementById('cart-empty');
+				tbody.innerHTML = '';
+				let total = 0;
+				if (cart.length === 0) {
+					emptyEl.style.display = 'block';
+					document.getElementById('cart-list').style.display = 'none';
+					totalEl.textContent = 'Total: R$ 0,00';
+					return;
+				} else {
+					emptyEl.style.display = 'none';
+					document.getElementById('cart-list').style.display = 'block';
+				}
+				// Agrupa produtos por nome e preço (para permitir múltiplas unidades)
+				const grouped = {};
+				cart.forEach(prod => {
+					const key = prod.name + '|' + prod.price + '|' + prod.img;
+					if (!grouped[key]) {
+						grouped[key] = { ...prod, quantity: 1 };
+					} else {
+						grouped[key].quantity += 1;
+					}
+				});
+				Object.values(grouped).forEach((prod, idx) => {
+					const subtotal = prod.price * prod.quantity;
+					total += subtotal;
+					const tr = document.createElement('tr');
+					tr.innerHTML = `
+						<td>${prod.name}</td>
+						<td><img src="${prod.img}" alt="${prod.name}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;"></td>
+						<td>R$ ${prod.price.toFixed(2).replace('.', ',')}</td>
+						<td>
+							<button class="btn btn-sm btn-outline-light" onclick="updateQty('${prod.name}','${prod.price}','${prod.img}',-1)">-</button>
+							<span class="mx-2">${prod.quantity}</span>
+							<button class="btn btn-sm btn-outline-light" onclick="updateQty('${prod.name}','${prod.price}','${prod.img}',1)">+</button>
+						</td>
+						<td>R$ ${subtotal.toFixed(2).replace('.', ',')}</td>
+						<td>
+							<button class="btn btn-sm btn-danger" onclick="removeItem('${prod.name}','${prod.price}','${prod.img}')">Remover</button>
+						</td>
+					`;
+					tbody.appendChild(tr);
+				});
+				totalEl.textContent = 'Total: R$ ' + total.toFixed(2).replace('.', ',');
+			}
+			function updateQty(name, price, img, delta) {
+				let cart = getCart();
+				price = parseFloat(price);
+				if (delta > 0) {
+					cart.push({ name, price, img });
+				} else {
+					// Remove uma unidade
+					const idx = cart.findIndex(p => p.name === name && p.price === price && p.img === img);
+					if (idx !== -1) cart.splice(idx, 1);
+				}
+				saveCart(cart);
+				renderCart();
+			}
+			function removeItem(name, price, img) {
+				let cart = getCart();
+				price = parseFloat(price);
+				cart = cart.filter(p => !(p.name === name && p.price === price && p.img === img));
+				saveCart(cart);
+				renderCart();
+			}
+			document.addEventListener('DOMContentLoaded', renderCart);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html> <!--Tipo do documento (html)-->
+<html lang="pt-br"> <!--Usado para identificar o idioma do conteúdo textual na web-->
+
+  <!-- P.s.: Deixei vários comentários espalhados pelo código pra facilitar a leitura entre quem está editando -->
+  <!--P.s.p.s: Demorei pra bastante pra organizar as tags de forma que seja possível seguir as linhas então por favor não desorganizar ao editar. -->
+
+  <head> <!--Cabeçalho do documento-->
+
+    <meta charset="UTF-8"> <!--Define a codificação de caracteres para o documento-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Configuração para responsividade de largura em dispositivos móveis-->
+
+    <title>Game Mania</title> <!--Título da página que aparece na aba do navegador durr-->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+  </head>
+ 
+
+  <body> <!--Corpo do documento-->
+
+    <header class="site-header sticky-top"> <!--Cabeçalho do site, sendo de classe site-header pra facilitar no css-->
+
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> <!--Divisão flexível para alinhar itens no header-->
+
+          <a href="index.html" class="logo-text"> <!--Link para a página inicial com a logo da empresa-->
+            <img src="assets/imagens/logo.png" alt="Logotipo Game Mania" class="logo"> <!-- Nossa grandíosissima logo da empresa -->
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> <!--Menu de navegação principal-->
+            <li><a href="index.html" class="nav-link px-2 text-secondary">Página Inicial</a></li>
+            <li><a href="favoritos.html" class="nav-link px-2 text-white">Favoritos</a></li>
+            <li><a href="carrinho.html" class="nav-link px-2 text-white">Carrinho</a></li>
+            <li><a href="sobre.html" class="nav-link px-2 text-white">Sobre Nós</a></li>
+          </ul>
+
+          <form class="search-bar flex-grow-1 mx-md-4 my-2 my-md-0 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="#" aria-label="Buscar produtos"> <!--Barra de pesquisa-->
+            <input type="text" placeholder="Pesquisar nome do produto..." class="search-input form-control"> <!--Input de busca-->
+            <button type="submit" class="search-button btn p-0">  <!--Botão de busca com ícone de lupa-->
+              <img src="assets/imagens/lupa.png" width="30" button type="submit" class="btn-sm ms-2">
+            </button>
+          </form>
+
+          <div class="text-end">
+            <button type="button" class="btn btn-warning"><a href="login.html" class="nav-link px-2 text-secondary">Login</a></button> <!--Botão de login-->
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <main>
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel"> <!-- Carrossel de imagens que vão na teoria mostrando as "promoções" mas que nesse caso são só stockphotos. -->
+
+       <div class="carousel-indicators"> <!-- Mostra onde você está no carrossel e tem setinhas -->
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+           class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+           type="button"
+           data-bs-target="#myCarousel"
+           data-bs-slide-to="1"
+           aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+           data-bs-target="#myCarousel"
+           data-bs-slide-to="2"
+           aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+       </div>
+
+        <div class="carousel-inner"> <!-- Imagens do carrossel que ficam alterando -->
+          <div class="carousel-item active">
+            <img src="assets/imagens/banner1.jpg" class="d-block carousel-img" alt="Promoção banner 1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/imagens/banner2.jpg" class="d-block carousel-img" alt="Promoção banner 2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/imagens/banner3.jpg" class="d-block carousel-img" alt="Promoção banner 3">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/imagens/banner4.jpg" class="d-block carousel-img" alt="Promoção banner 4">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/imagens/banner5.jpg" class="d-block carousel-img" alt="Promoção banner 5">
+          </div>
+        </div>
+
+        <!-- Controle de Navegação dos Banners -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+
+      </div>
+    </main>
+
+
+    <main> 
+      <!-- Seção principal do site sobre produtos -->
+      <div class="album py-5 bg-body-tertiary"> <!-- Seção de álbuns de produtos com padding vertical e fundo terciário -->
+
+        <div class="container"> <!-- Container para centralizar o conteúdo -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> <!-- Definição de linhas e colunas para responsividade -->
+
+            <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/controle.jpg" class="product-image" alt="Controle Gamer">
+                  <div class="card-body">
+                    <p class="card-text product-title">
+                      Controle Gamer
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="btn-group">
+                        <button
+                          type="button"
+                          class="add-to-cart btn btn-success mt-auto"
+                        >
+                          COMPRAR
+                        </button>
+                        <button
+                          type="button"
+                          class="add-to-fav btn btn-sucess mt-auto"
+                        >
+                          <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                        </button>
+                      </div>
+                      <small class="product-price">R$ 189,99</small>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/gabinete.jpg" class="product-image" alt="Gabinete Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Gabinete Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 499,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/monitor.jpg" class="product-image" alt="Monitor Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Monitor Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                      <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                        </button>
+                    </div>
+                    <small class="product-price">R$ 799,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <div class="col product-item">
+              <div class="card shadow-sm">
+              <img src="assets/imagens/mouse.jpg" class="product-image" alt="Mouse Gamer">
+                <div class="card-body">
+                  <p class="product-title card-text">
+                    Mouse Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto "
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 99,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/teclado.jpg" class="product-image" alt="Teclado Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Teclado Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 399,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <div class="col product-item">
+              <div class="card shadow-sm">
+              <img src="assets/imagens/fone.jpg" class="product-image" alt="Fone Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Fone Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 299,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/mousepad.jpg" class="product-image" alt="Mousepad Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Mousepad Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 39,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/cadeira.jpg" class="product-image" alt="Cadeira Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Cadeira Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 799,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <div class="col product-item">
+              <div class="card shadow-sm">
+                <img src="assets/imagens/almofada.jpg" class="product-image" alt="Almofada Gamer">
+                <div class="card-body">
+                  <p class="card-text product-title">
+                    Almofada Gamer
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="add-to-cart btn btn-success mt-auto"
+                      >
+                        COMPRAR
+                      </button>
+                      <button
+                        type="button"
+                        class="add-to-fav btn btn-sucess mt-auto"
+                      >
+                        <img src="assets/imagens/star.png" class="estrela-fav" alt="Favoritar">
+                      </button>
+                    </div>
+                    <small class="product-price">R$ 64,99</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- Fim da linha de produtos -->
+        </div> <!-- Fim do container -->
+
+      </div> <!-- Fim da seção de álbuns de produtos -->
+    </main> <!-- Fim da seção principal do site sobre produtos -->
+
+    <footer class="site-footer  mt-5 py-4 d-flex flex-wrap align-items-center justify-content-center"> <!--Rodapé do site-->
+      <p class="col-md-4 mb-0 align-items-center text-body-secondary">
+      &copy; GameMania 2025 - Criadores do site Kauan Dias & Pedro Nunes
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS que faz o site funcionar no fim de tudo -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- JavaScript Customizado a programar somente depois de finalizar html -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  </body>
+</html>

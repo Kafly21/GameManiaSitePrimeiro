@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Game Mania</title>
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    	<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+ 
+
+	<body>
+
+		<header class="site-header sticky-top">
+
+			<div class="container">
+				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+					<a href="index.html" class="logo-text">
+						<img src="assets/imagens/logo.png" alt="Logotipo Game Mania" class="logo">
+					</a>
+
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+						<li><a href="index.html" class="nav-link px-2 text-white">Página Inicial</a></li>
+						<li><a href="favoritos.html" class="nav-link px-2 text-secondary">Favoritos</a></li>
+						<li><a href="carrinho.html" class="nav-link px-2 text-white">Carrinho</a></li>
+						<li><a href="sobre.html" class="nav-link px-2 text-white">Sobre Nós</a></li>
+					</ul>
+
+					<form class="search-bar flex-grow-1 mx-md-4 my-2 my-md-0 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="#" aria-label="Buscar produtos">
+						<input type="text" placeholder="Pesquisar nome do produto..." class="search-input form-control">
+						<button type="submit" class="search-button btn p-0">
+						<img src="assets/imagens/lupa.png" width="30" button type="submit" class="btn-sm ms-2">
+						</button>
+					</form>
+
+					<div class="text-end">
+						<button type="button" class="btn btn-warning"><a href="login.html" class="nav-link px-2 text-secondary">Login</a></button> <!--Botão de login-->
+					</div>
+
+				</div>
+			</div>
+
+		</header>
+
+        <main class="container py-5">
+            <h2 class="text-center mb-4"> ★  ★  ★ Favoritos ★  ★  ★</h2>
+            <div id="fav-empty" class="text-center fav-vazio text-muted" style="display:none;">
+                <p class="vazio">Ops, não tem nada por aqui...</p>
+                <p>
+                    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Que tal favoritar alguma coisa? :D</button>
+                </p>
+            </div>
+            <div id="fav-list" class="table-responsive">
+                <table class="table table-dark table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Imagem</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fav-items">
+                        <!-- Produtos favoritos inseridos via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+            </div>
+        </main>
+
+        <footer class="site-footer mt-5 py-4 d-flex flex-wrap align-items-center justify-content-center">
+            <p class="col-md-4 mb-0 align-items-center text-body-secondary">
+                &copy; GameMania 2025 - Criadores do site Kauan Dias & Pedro Nunes
+            </p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/Js/main.js"></script>
+        <script>
+        function getFavs() {
+            return JSON.parse(localStorage.getItem('favorites')) || [];
+        }
+        function saveFavs(favs) {
+            localStorage.setItem('favorites', JSON.stringify(favs));
+        }
+        function renderFavs() {
+            const favs = getFavs();
+            const tbody = document.getElementById('fav-items');
+            const emptyEl = document.getElementById('fav-empty');
+            tbody.innerHTML = '';
+            if (favs.length === 0) {
+                emptyEl.style.display = 'block';
+                document.getElementById('fav-list').style.display = 'none';
+                return;
+            } else {
+                emptyEl.style.display = 'none';
+                document.getElementById('fav-list').style.display = 'block';
+            }
+            favs.forEach((prod, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${prod.name}</td>
+                    <td><img src="${prod.img}" alt="${prod.name}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;"></td>
+                    <td>R$ ${prod.price.toFixed(2).replace('.', ',')}</td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" onclick="removeFav('${prod.name}','${prod.price}','${prod.img}')">Excluir</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+        function removeFav(name, price, img) {
+            let favs = getFavs();
+            price = parseFloat(price);
+            favs = favs.filter(p => !(p.name === name && p.price === price && p.img === img));
+            saveFavs(favs);
+            renderFavs();
+        }
+        document.addEventListener('DOMContentLoaded', renderFavs);
+        </script>
+    </body>
+</html>

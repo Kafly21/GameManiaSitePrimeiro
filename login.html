@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!--Tipo do documento (html)-->
+<html lang="pt-br"> <!--Usado para identificar o idioma do conteúdo textual na web-->
+
+  <head> <!--Cabeçalho do documento-->
+
+    <meta charset="UTF-8"> <!--Define a codificação de caracteres para o documento-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Configuração para responsividade de largura em dispositivos móveis-->
+
+    <title>Game Mania</title> <!--Título da página que aparece na aba do navegador durr-->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+  </head>
+
+  <body>
+    <header class="site-header sticky-top"> <!--Cabeçalho do site, sendo de classe site-header pra facilitar no css-->
+
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> <!--Divisão flexível para alinhar itens no header-->
+
+            <a href="index.html" class="logo-text"> <!--Link para a página inicial com a logo da empresa-->
+              <img src="assets/imagens/logo.png" alt="Logotipo Game Mania" class="logo"> <!-- Nossa grandíosissima logo da empresa -->
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> <!--Menu de navegação principal-->
+              <li><a href="index.html" class="nav-link px-2 text-white">Página Inicial</a></li>
+              <li><a href="favoritos.html" class="nav-link px-2 text-white">Favoritos</a></li>
+              <li><a href="carrinho.html" class="nav-link px-2 text-white">Carrinho</a></li>
+              <li><a href="sobre.html" class="nav-link px-2 text-white">Sobre Nós</a></li>
+            </ul>
+
+            <form class="search-bar flex-grow-1 mx-md-4 my-2 my-md-0 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="#" aria-label="Buscar produtos"> <!--Barra de pesquisa-->
+              <input type="text" placeholder="Pesquisar nome do produto..." class="search-input form-control"> <!--Input de busca-->
+              <button type="submit" class="search-button btn p-0">  <!--Botão de busca com ícone de lupa-->
+                <img src="assets/imagens/lupa.png" width="30" button type="submit" class="btn-sm ms-2">
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+    </header>
+
+    <div class="modal-dialog"> <!--Título para o formulário de login-->
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="fw-bold mb-0 fs-2">Faça login</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body p-5 pt-0" > <!-- Corpo do Formulário de E-mail -->
+          <form class="">
+            <div class="form-floating mb-3">
+              <input
+               type="email"
+               class="form-control rounded-3"
+               id="floatingInput"
+               placeholder="name@example.com"
+              />
+              <label for="floatingInput">Email</label>
+            </div>
+
+            <div class="form-floating mb-3"> <!-- Corpo do Formulário de Senha -->
+              <input
+                type="password"
+                class="form-control rounded-3"
+                id="floatingPassword"
+                placeholder="Password"
+              />
+              <label for="floatingPassword">Senha</label>
+              </div>
+
+              <!-- Botão de Login  -->
+              <button
+                class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                type="submit" >
+                Login
+              </button>
+          </form>
+        </div>
+      </div>
+      <p class="text-center">Não tem cadastro?</p>
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="cadastrese.html" class="btn btn-success btn-lg rounded-3">Cadastre-se</a>
+    </div>
+
+    <footer class="site-footer  mt-5 py-4 d-flex flex-wrap align-items-center justify-content-center"> <!--Rodapé do site-->
+      <p class="col-md-4 mb-0 align-items-center text-body-secondary">
+      &copy; GameMania 2025 - Criadores do site Kauan Dias & Pedro Nunes
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS que faz o site funcionar no fim de tudo -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- JavaScript Customizado a programar somente depois de finalizar html -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  </body>
+</html>
