@@ -261,3 +261,20 @@ html, body {
 
 /* Se preferir remover o círculo de fundo (para um visual só com a seta), remova a
    propriedade `background-color` acima em `.carousel-control-*-icon`. */
+
+.sobrenos {
+    background-color: #0f088d;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+}
+
+.gamer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
