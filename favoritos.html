@@ -44,11 +44,11 @@
 		</header>
 
         <main class="container py-5">
-            <h2 class="text-center mb-4"> ★ Favoritos ★ </h2>
+            <h2 class="text-center mb-4"> ★  ★  ★ Favoritos ★  ★  ★</h2>
             <div id="fav-empty" class="text-center fav-vazio text-muted" style="display:none;">
                 <p class="vazio">Ops, não tem nada por aqui...</p>
                 <p>
-                    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Que tal favoritar alguma coisa?</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Que tal favoritar alguma coisa? :D</button>
                 </p>
             </div>
             <div id="fav-list" class="table-responsive">
@@ -78,48 +78,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/jscript/main.js"></script>
-        
-        <script>
-        function getFavs() {
-            return JSON.parse(localStorage.getItem('favorites')) || [];
-        }
-        function saveFavs(favs) {
-            localStorage.setItem('favorites', JSON.stringify(favs));
-        }
-        function renderFavs() {
-            const favs = getFavs();
-            const tbody = document.getElementById('fav-items');
-            const emptyEl = document.getElementById('fav-empty');
-            tbody.innerHTML = '';
-            if (favs.length === 0) {
-                emptyEl.style.display = 'block';
-                document.getElementById('fav-list').style.display = 'none';
-                return;
-            } else {
-                emptyEl.style.display = 'none';
-                document.getElementById('fav-list').style.display = 'block';
-            }
-            favs.forEach((prod, idx) => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${prod.name}</td>
-                    <td><img src="${prod.img}" alt="${prod.name}" style="width:60px; height:60px; object-fit:cover; border-radius:6px;"></td>
-                    <td>R$ ${prod.price.toFixed(2).replace('.', ',')}</td>
-                    <td>
-                        <button class="btn btn-sm btn-danger" onclick="removeFav('${prod.name}','${prod.price}','${prod.img}')">Excluir</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-        function removeFav(name, price, img) {
-            let favs = getFavs();
-            price = parseFloat(price);
-            favs = favs.filter(p => !(p.name === name && p.price === price && p.img === img));
-            saveFavs(favs);
-            renderFavs();
-        }
-        document.addEventListener('DOMContentLoaded', renderFavs);
-        </script>
+    
     </body>
 </html>
