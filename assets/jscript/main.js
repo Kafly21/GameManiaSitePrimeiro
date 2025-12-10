@@ -1,3 +1,61 @@
+//--- JS relacionado ao Header ---
+
+//Barra de Pesquisa (que realmente pesquisa produtos)
+const searchInput = document.querySelector('.search-input');
+const productList = document.querySelector('.product-list');
+if (searchInput && productList) {
+	searchInput.addEventListener('keyup', (event) => {
+		const searchTerm = event.target.value.toLowerCase();
+		const products = productList.querySelectorAll('.product-item');
+		console.log('Search Term:', searchTerm);
+
+		products.forEach(product => {
+			const productName = product.querySelector('.product-title').textContent.toLowerCase();
+			if (productName.includes(searchTerm)) {
+				product.style.visibility = 'visible'; // Mostra o produto
+				product.style.position = 'static'; // Garante que ocupe espaço
+			} else {
+				product.style.visibility = 'hidden'; // Esconde o produto
+				product.style.position = 'absolute'; // Remove do fluxo do documento
+			}
+		});
+	});
+}
+
+
+//--- JS relacionado ao Footer ---
+
+// Validação do E-mail da Newsletter
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+	newsletterForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const emailInput = newsletterForm.querySelector('.newsletter-input');
+		const email = emailInput.value;
+
+		if (validateEmail(email)) {
+			alert('Inscrição na newsletter realizada com sucesso!');
+			emailInput.value = ''; // Limpa o campo após o envio
+		} else {
+			alert('Por favor, insira um endereço de e-mail válido.');
+		}
+	});
+}
+function validateEmail(email) {
+	const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
+
+
+//--- JS relacionada ao site em geral ---
+
+// Função para adicionar produto ao carrinho
+function addToCart(product) {
+	let cart = JSON.parse(localStorage.getItem('cart')) || [];
+	cart.push(product);
+	localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 // Função para adicionar produto aos favoritos
 function addToFav(product) {
 	let favs = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -18,7 +76,7 @@ function showAddSuccessMessage() {
 		msg.style.top = '72px';
 		msg.style.left = '50%';
 		msg.style.transform = 'translateX(-50%)';
-		msg.style.background = green = 'rgba(40,167,69,0.95)';
+		msg.style.background = 'rgba(40,167,69,0.95)'
 		msg.style.color = black = '#000';
 		msg.style.fontWeight = 'bold';
 		msg.style.fontSize = '1.2rem';
@@ -33,7 +91,6 @@ function showAddSuccessMessage() {
 	msg.style.display = 'block';
 	setTimeout(() => { msg.style.display = 'none'; }, 1200);
 }
-
 // Função para mostrar mensagem de sucesso ao favoritar
 function showFavSuccessMessage() {
 	let msg = document.getElementById('fav-success-msg');
@@ -60,14 +117,7 @@ function showFavSuccessMessage() {
 	setTimeout(() => { msg.style.display = 'none'; }, 1200);
 }
 
-// Função para adicionar produto ao carrinho
-function addToCart(product) {
-	let cart = JSON.parse(localStorage.getItem('cart')) || [];
-	cart.push(product);
-	localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-// Captura todos os botões 'COMPRAR' e adiciona evento
+//Pega todos os botões 'COMPRAR' e 'FAVORITAR' e adiciona evento
 document.addEventListener('DOMContentLoaded', function() {
 	// Botões de comprar
 	const buyButtons = document.querySelectorAll('.add-to-cart');
@@ -84,8 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			};
 			addToCart(product);
 			showAddSuccessMessage();
-			btn.textContent = 'Adicionado!';
-			setTimeout(() => { btn.textContent = 'COMPRAR'; }, 1200);
 		});
 	});
 
@@ -104,8 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			};
 			addToFav(product);
 			showFavSuccessMessage();
-			btn.classList.add('favorited');
-			setTimeout(() => { btn.classList.remove('favorited'); }, 1200);
 		});
 	});
 });
