@@ -5,42 +5,41 @@
     box-sizing: border-box;
 }
 
+
+/*Relacionado ao site inteiro*/
 /* Header principal */
 .site-header {
     background-color: #0f088d; /* Azul escuro sólido */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
 }
-
 /* Corpo do site */
 html, body {
     height: 100%;
     background: #050a30; /* Fundo sólido azul escuro */
     color: #ffffff; /* Texto branco para contraste */
 }
-
 /*Sem essa linha o site quebra e fica com um fundo branco tampando tudo */
 .album.bg-body-tertiary,
 .bg-body-tertiary { /* Mantém o fundo transparente */
     background-color: transparent !important;
 }
 
+
+/*Header*/
 /* Logo */
 .logo {
     width: 150px;
     height: auto;
 }
-
 /* Barra de Pesquisa */
 .search-bar { /* Contêiner da Barra de Pesquisa */
     position: relative; /* Necessário para posicionar o botão da lupa */
     max-width: 800px; /* Largura máxima da barra de pesquisa */
 }
-
 .search-input.form-control { /* Campo de Entrada da Pesquisa */
     border-radius: 20px; /* Bordas arredondadas */
     padding-right: 45px; /* Espaço para o ícone da lupa */
 }
-
 .search-button { /* Botão da Lupa */
     position: absolute; /* Posicionamento absoluto dentro do contêiner */
     right: 10px; /* Distância da borda direita */
@@ -49,18 +48,36 @@ html, body {
     background: transparent; /* Fundo transparente */
     border: none;  /* Sem borda */
 }
-
 .search-image { /* Ícone da Lupa */
     width: 20px;
     height: 20px;
 }
 
+
+/* Estilos para Páginas de Formulário (Login/Cadastro) */
+.form-page-main {
+    background-color: #f4f4f4; /* Um fundo suave para a área do formulário */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.form-container h2 {
+    color: #072033;
+    font-weight: bold;
+}
+
+/*Index*/
+/*Carrossel de Banners*/
 .center-block { /* Centraliza o Carrossel */
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 .carousel-img { /* Imagens do Carrossel */
     display: block;
     margin: 0 auto;
@@ -70,150 +87,12 @@ html, body {
     height: auto;
     object-fit: cover;
 }
-
 @media (max-width: 768px) { /* Ajustes para telas menores */
     .carousel-img {
         width: 100%;
         max-width: 100%;
     }
 }
-
-/* Seção de Produtos */
-.produtos h2 { /* Título da Seção de Produtos */
-    text-align: center;
-    color: #072033;
-    font-weight: bold;
-}
-
-.product-item { /* Card do Produto */
-    max-width:  400px;
-    margin: 0 auto;  /* Centraliza horizontalmente */
-    background: #050a30;
-    border-radius: 5px;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Garante que o flex-column funcione */
-    flex-direction: column;
-}
-
-.card-body { /* Corpo do Card */
-    background: #0f088d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1; /* Faz o corpo do card crescer para preencher o espaço */
-}
-
-.product-item:hover { /* Efeito flutuação */
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.product-title { /* Título do Produto */
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.product-image { /* Imagem do Produto */
-    border-radius: 4px;
-    margin-bottom: 15px;
-    object-fit: cover;
-    aspect-ratio: 1 / 1; /* Mantém a imagem quadrada */
-
-}
-
-.product-price { /* Preço do Produto */
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-.comprar {
-    border-radius: 10px;
-    padding-right: 40px;
-}
-.add-to-cart.btn-success { /* Botão Adicionar ao Carrinho */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.add-to-cart.btn-success:hover { /* Efeito hover do botão */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
-}
-
-.estrela-fav {
-    width: 30px;
-    height: 30px;
-}
-
-.estrela-fav:hover {
-    transform: translateY(-2px);
-    transition: transform 0.2s ease;
-} 
-
-.carrinho-vazio {
-    border-radius: 10px;
-    border-color: black;
-    padding: 10px;
-    background-color: #2c3034;
-    font-size: 18px;
-    margin-top: 20px;
-}
-.fav-vazio {
-    margin-top: 20px;
-    background-color: #2c3034;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    color: white;
-}
-
-.vazio {
-    margin-top: 20px;
-    color: white;
-}
-
-/* Estilo do Footer */
-/* Footer styles */
-.site-footer {
-    /* Solid color changed to #050a30 */
-    background: #0f088d;
-    color: #ffffff;
-    padding: 20px 0;
-}
-
-.site-footer a {
-    color: #ffffff;
-}
-.site-footer a:hover {
-    color: #ffd700;
-}
-
-.site-footer .text-body-secondary {
-    color: #ffffff !important;
-}
-
-/* Estilos para Páginas de Formulário (Login/Cadastro) */
-.form-page-main {
-    background-color: #f4f4f4; /* Um fundo suave para a área do formulário */
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-}
-
-.form-container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.form-container h2 {
-    color: #072033;
-    font-weight: bold;
-}
-
 /* Customizações do carrossel: setas maiores, brancas e mais próximas ao conteúdo */
 /* Posiciona as setas perto da borda da imagem centralizada (imagens usam 70% da largura)
    então o espaçamento lateral é calculado como (100% - 70%) / 2 = 15% */
@@ -260,9 +139,101 @@ html, body {
     .carousel-control-next-icon { background-size: 30px 30px; width: 30px; height: 30px; }
 }
 
-/* Se preferir remover o círculo de fundo (para um visual só com a seta), remova a
-   propriedade `background-color` acima em `.carousel-control-*-icon`. */
+/*Aba de Produtos*/
+.titulo {
+    padding-top: 20px; /*Adiciona espaçamento para o titulo respirar*/
+    text-align: center;
+    font-weight: bold;
+}
+.produtos h2 { /* Título da Seção de Produtos */
+    text-align: center;
+    color: #072033;
+    font-weight: bold;
+}
+.product-item { /* Card do Produto */
+    max-width:  400px;
+    margin: 0 auto;  /* Centraliza horizontalmente */
+    background: #050a30;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Garante que o flex-column funcione */
+    flex-direction: column;
+}
+.card-body { /* Corpo do Card */
+    background: #0f088d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Faz o corpo do card crescer para preencher o espaço */
+}
+.product-item:hover { /* Efeito flutuação */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.product-title { /* Título do Produto */
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+.product-image { /* Imagem do Produto */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Mantém a imagem quadrada */
+}
+.product-price { /* Preço do Produto */
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+.comprar {
+    border-radius: 10px;
+    padding-right: 40px;
+}
+.add-to-cart.btn-success { /* Botão Adicionar ao Carrinho */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.add-to-cart.btn-success:hover { /* Efeito hover do botão */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+.estrela-fav {
+    width: 30px;
+    height: 30px;
+}
+.estrela-fav:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+} 
 
+
+/*Carrinho e Favoritos*/
+.carrinho-vazio {
+    border-radius: 10px;
+    border-color: black;
+    padding: 10px;
+    background-color: #2c3034;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.fav-vazio {
+    margin-top: 20px;
+    background-color: #2c3034;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+}
+.vazio {
+    margin-top: 20px;
+    color: white;
+}
+
+
+/*Aba sobre nós do site*/
 .sobrenos {
     background-color: #0f088d;
     padding: 20px;
@@ -272,10 +243,38 @@ html, body {
     margin-right:auto;
     width: 70%;
 }
-
 .gamer {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+}
+
+
+/* Estilo do Footer */
+/* Footer styles */
+.site-footer {
+    /* Solid color changed to #050a30 */
+    background: #0f088d;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.mapa {
+    padding-right: 20px;
+}
+
+.footer-secao {
+    padding-right: 15%;
+}
+
+.site-footer a {
+    color: #ffffff;
+}
+.site-footer a:hover {
+    color: #ffd700;
+}
+
+.site-footer .text-body-secondary {
+    color: #ffffff !important;
 }
