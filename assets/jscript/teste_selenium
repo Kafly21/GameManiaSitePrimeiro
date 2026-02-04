@@ -1,0 +1,40 @@
+const {Builder, By, Key, until} = require('selenium-webdriver');
+
+async function iniciarTeste(){
+    let driver = await new Builder().forBrowser('chrome').build();
+    try {
+        console.log('Iniciando testes automatizados na página GameMania...');
+        await driver.get('file:///C:/Users/ead_dev/Documents/Nunes%20-%20Dev/Game%20Mania/Game%20Mania/GameManiaSitePrimeiro-master/index.html');
+        await driver.manage().window().maximize();
+
+            try{
+                console.log('\n==> Iniciando teste 01: Verificação de rolagem até o rodapé da página');
+                let footer = await driver.wait(until.elementLocated(By.element('footer')), 3000);
+                await driver.executeScript("arguments[0].scrollIntoView(true);", footer);
+                console.log('==> Página percorrida com sucesso!');
+            }catch(error){
+                console.log('xX Erro ao encontrar o elemento Footer Xx');
+            }
+
+        
+            try{
+                console.log("\n==> Iniciando teste 02: Verificação de exibição da mensagem ao favoritar o produto");
+                let favoriteButton = await driver.findElement(By.css('estrela-fav'));
+                favoriteButton.click();
+                let favoriteMessage = await driver.wait(until.elementLocated(By.function('showFavSuccessMessage')), 10000);
+                await driver.get(favoriteMessage)
+                console.log('==> Mensagem de favoritar exibida com sucesso!');
+            }catch(error){
+                console.log('xX Erro ao favoritar o produto ou encontrar a mensagem de sucesso Xx');
+            }
+    
+    } catch (error){
+        console.log('xX ERRO NO TESTE Xx');
+    } finally {
+        console.log('Testes finalizados. Fechando o navegador...');
+        await driver.sleep(3000);
+        await driver.quit();
+    }
+
+}
+iniciarTeste();
